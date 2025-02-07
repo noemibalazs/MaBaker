@@ -3,7 +3,7 @@ MaBaker
 Idea:
 
 1. Parse the json file in the asset folder to get a list of recipes
-2. Cicking on a recipe will open the recipe details screen
+2. Clicking on a recipe will open the recipe details screen
 3. Recipe details showing the ingredients and steps of a recipe
 4. Use ExoPlayer to playback a video
 5. Use Hilt for dependency injection
