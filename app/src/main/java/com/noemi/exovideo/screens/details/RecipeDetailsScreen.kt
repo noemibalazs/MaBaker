@@ -105,14 +105,14 @@ fun RecipeDetailsScreen(viewModel: RecipeDetailsViewModel, modifier: Modifier = 
     ) {
 
         item {
-            RecipeAppBar(titleResource = R.string.label_recipe_steps, iconDescriptionResource = R.string.label_icon_content_description)
+            RecipeAppBar(titleResource = R.string.label_recipe_steps)
         }
 
         item {
-            VideoSurface(exoPlayer = exoPlayer, context = context)
+            RecipeVideoSurface(exoPlayer = exoPlayer, context = context)
         }
 
-        item {
+        if (mediaItems.isNotEmpty()) item {
             RecipeStepDescription(mediaItems[viewModel.stepIndex].mediaId)
         }
 
@@ -135,12 +135,13 @@ fun RecipeDetailsScreen(viewModel: RecipeDetailsViewModel, modifier: Modifier = 
 
 @OptIn(UnstableApi::class)
 @Composable
-fun VideoSurface(modifier: Modifier = Modifier, exoPlayer: ExoPlayer, context: Context) {
+fun RecipeVideoSurface(modifier: Modifier = Modifier, exoPlayer: ExoPlayer, context: Context) {
 
     AndroidView(
         modifier = modifier
             .fillMaxWidth()
-            .height(270.dp),
+            .height(270.dp)
+            .testTag(stringResource(id = R.string.label_recipe_video_surface_tag)),
         factory = {
             PlayerView(context).apply {
                 player = exoPlayer
@@ -166,7 +167,7 @@ fun RecipeStepDescription(description: String, modifier: Modifier = Modifier) {
 @Composable
 fun RecipeIngredients(modifier: Modifier = Modifier) {
     Text(
-        text = stringResource(id = R.string.label_recipes_ingredients),
+        text = stringResource(id = R.string.label_recipe_ingredients),
         modifier = modifier
             .padding(horizontal = 20.dp)
             .fillMaxWidth(),
@@ -179,8 +180,9 @@ fun IngredientItem(ingredient: String, modifier: Modifier = Modifier) {
 
     Card(
         modifier = modifier
-            .padding(horizontal = 20.dp, vertical = 6.dp )
-            .fillMaxWidth(),
+            .padding(horizontal = 20.dp, vertical = 6.dp)
+            .fillMaxWidth()
+            .testTag(stringResource(id = R.string.label_ingredient_tag)),
         elevation = CardDefaults.cardElevation(6.dp)
     ) {
 
@@ -199,7 +201,7 @@ fun IngredientItem(ingredient: String, modifier: Modifier = Modifier) {
             Text(
                 text = ingredient, color = Color.Black,
                 textAlign = TextAlign.Justify,
-                modifier = modifier.padding(vertical = 6.dp),
+                modifier = modifier.padding(6.dp),
                 style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold, fontSize = 16.sp)
             )
         }

@@ -11,6 +11,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -18,7 +19,7 @@ import com.noemi.exovideo.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RecipeAppBar(titleResource: Int, iconDescriptionResource: Int, modifier: Modifier = Modifier) {
+fun RecipeAppBar(titleResource: Int, modifier: Modifier = Modifier) {
     TopAppBar(
         title = {
             Text(
@@ -29,7 +30,7 @@ fun RecipeAppBar(titleResource: Int, iconDescriptionResource: Int, modifier: Mod
         navigationIcon = {
             Icon(
                 painter = painterResource(id = R.drawable.icon),
-                contentDescription = stringResource(id = iconDescriptionResource),
+                contentDescription = stringResource(id = R.string.label_icon_content_description),
                 modifier = modifier
                     .padding(start = 12.dp, end = 8.dp)
                     .size(32.dp),
@@ -39,6 +40,7 @@ fun RecipeAppBar(titleResource: Int, iconDescriptionResource: Int, modifier: Mod
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = MaterialTheme.colorScheme.secondary,
             titleContentColor = MaterialTheme.colorScheme.onPrimary
-        )
+        ),
+        modifier = modifier.testTag(stringResource(id = R.string.label_app_bar_tag))
     )
 }

@@ -8,5 +8,8 @@
     <string name="label_recipe_avatar">Recipe avatar</string>
     <string name="label_recipe_content_tag">Recipe content tag</string>
     <string name="label_icon_content_description">MaBaker icon</string>
-    <string name="label_recipes_ingredients">Ingredients:</string>
+    <string name="label_recipe_ingredients">Ingredients:</string>
+    <string name="label_app_bar_tag">App bar tag</string>
+    <string name="label_ingredient_tag">Ingredient tag</string>
+    <string name="label_recipe_video_surface_tag">Step tag</string>
 </resources>

@@ -49,20 +49,20 @@ fun RecipesScreen(modifier: Modifier = Modifier) {
 
     val context = LocalContext.current
 
+    if (errorMessage.isNotEmpty()) {
+        Toast.makeText(context, errorMessage, Toast.LENGTH_LONG).show()
+    }
+
     Column(
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        RecipeAppBar(titleResource = R.string.app_name, iconDescriptionResource = R.string.label_icon_content_description)
+        RecipeAppBar(titleResource = R.string.app_name)
 
         when (isLoading) {
             true -> RecipeProgressBar()
             else -> RecipesLazyGrid(recipes = recipes)
-        }
-
-        if (errorMessage.isNotEmpty()) {
-            Toast.makeText(context, errorMessage, Toast.LENGTH_LONG).show()
         }
     }
 }

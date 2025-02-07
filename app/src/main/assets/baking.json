@@ -31,22 +31,22 @@
       {
         "quantity": "1",
         "measure": "k",
-        "ingredient": "Nutella or other chocolate-hazelnut spread"
+        "ingredient": "Nutella or other chocolate hazelnut spread"
       },
       {
         "quantity": "500",
         "measure": "g",
-        "ingredient": "Mascapone Cheese(room temperature)"
+        "ingredient": "Mascarpone Cheese room temperature"
       },
       {
         "quantity": "1",
         "measure": "cup",
-        "ingredient": "heavy cream(cold)"
+        "ingredient": "heavy cream (cold)"
       },
       {
         "quantity": "4",
         "measure": "oz",
-        "ingredient": "cream cheese(softened)"
+        "ingredient": "cream cheese (softened)"
       }
     ],
     "steps": [
@@ -275,7 +275,7 @@
       {
         "quantity": "961",
         "measure": "g",
-        "ingredient": "unsalted butter, softened and cut into 1 in. cubes"
+        "ingredient": "unsalted butter, softened and cut into 1 in cubes"
       },
       {
         "quantity": "6",
