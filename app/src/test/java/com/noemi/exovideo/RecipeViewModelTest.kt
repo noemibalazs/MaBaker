@@ -4,7 +4,7 @@ import app.cash.turbine.test
 import io.mockk.mockk
 import io.mockk.junit4.MockKRule
 import com.google.common.truth.Truth.assertThat
-import com.noemi.exovideo.provider.RecipesProvider
+import com.noemi.exovideo.repository.RecipeRepository
 import com.noemi.exovideo.screens.recipes.RecipeViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -27,7 +27,7 @@ class RecipeViewModelTest {
     val mockkRule = MockKRule(this)
 
     private val dispatcher: TestDispatcher = UnconfinedTestDispatcher()
-    private val provider: RecipesProvider = mockk()
+    private val provider: RecipeRepository = mockk()
 
     private lateinit var viewModel: RecipeViewModel
 

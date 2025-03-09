@@ -1,4 +1,4 @@
-package com.noemi.exovideo.provider
+package com.noemi.exovideo.repository
 
 import android.content.Context
 import com.google.common.reflect.TypeToken
@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class RecipesProviderImpl @Inject constructor(private val context: Context) : RecipesProvider {
+class RecipeRepositoryImpl @Inject constructor(private val context: Context) : RecipeRepository {
 
     override fun getRecipes(): Flow<List<Recipe>> = flow {
         val json = getJsonString()

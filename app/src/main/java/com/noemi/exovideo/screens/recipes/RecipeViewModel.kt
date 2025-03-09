@@ -3,7 +3,7 @@ package com.noemi.exovideo.screens.recipes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.noemi.exovideo.model.Recipe
-import com.noemi.exovideo.provider.RecipesProvider
+import com.noemi.exovideo.repository.RecipeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RecipeViewModel @Inject constructor(
-    private val recipesProvider: RecipesProvider
+    private val recipeRepository: RecipeRepository
 ) : ViewModel() {
 
     private val _recipes = MutableStateFlow(emptyList<Recipe>())
@@ -36,7 +36,7 @@ class RecipeViewModel @Inject constructor(
 
             delay(1000)
 
-            recipesProvider.getRecipes()
+            recipeRepository.getRecipes()
                 .catch {
                     _isLoading.emit(false)
                     _errorMessage.emit(it.message ?: "Error while getting recipes, try it again!")
