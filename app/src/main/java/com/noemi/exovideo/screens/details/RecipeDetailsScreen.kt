@@ -146,7 +146,7 @@ fun RecipeVideoSurface(modifier: Modifier = Modifier, exoPlayer: ExoPlayer, cont
             PlayerView(context).apply {
                 player = exoPlayer
 
-                resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FILL
+                resizeMode = AspectRatioFrameLayout.RESIZE_MODE_ZOOM
                 layoutParams = FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
             }
         })
